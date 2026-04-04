@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\v1;
 
+use App\Enums\Epoch;
 use App\Http\Controllers\Controller;
 use App\Models\Composer;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class ApiComposerController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string',
-            'epoch' => ['required', Rule::in(['medieval', 'renaissance', 'baroque', 'classical', 'early_romantic', 'romantic', 'late_romantic', '20th_century', 'post-war', '21st_century'])],
+            'epoch' => ['required', Rule::enum(Epoch::class)],
             'portrait_url' => 'nullable|url'
         ]);
 
@@ -57,7 +58,7 @@ class ApiComposerController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string',
-            'epoch' => ['required', Rule::in(['medieval', 'renaissance', 'baroque', 'classical', 'early_romantic', 'romantic', 'late_romantic', '20th_century', 'post-war', '21st_century'])],
+            'epoch' => ['required', Rule::enum(Epoch::class)],
             'portrait_url' => 'nullable|url'
         ]);
 
