@@ -9,8 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Model
 {
-    // use HasUuids;
-
+    
     /**
      * Get the genres listened to by the user during childhood
      */
