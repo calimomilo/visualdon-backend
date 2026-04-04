@@ -19,9 +19,9 @@ class ChildhoodGenre extends Model
     }
 
     /**
-     * Get the users who listened to the genre during childhood
+     * Get the user who listened to the genre during childhood
      */
-    public function users(): BelongsTo {
+    public function user(): BelongsTo {
         return $this->belongsTo(User::class);
     }
 }

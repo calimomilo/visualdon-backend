@@ -19,9 +19,9 @@ class EducationLevel extends Model
     }
 
     /**
-     * Get the users with the education level
+     * Get the user with the education level
      */
-    public function users(): BelongsTo {
+    public function user(): BelongsTo {
         return $this->belongsTo(User::class);
     }
 }

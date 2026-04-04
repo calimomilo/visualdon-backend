@@ -19,9 +19,9 @@ class CurrentGenre extends Model
     }
 
     /**
-     * Get the users who currently listen to the genre
+     * Get the user who currently listen to the genre
      */
-    public function users(): BelongsTo {
+    public function user(): BelongsTo {
         return $this->belongsTo(User::class);
     }
 }
