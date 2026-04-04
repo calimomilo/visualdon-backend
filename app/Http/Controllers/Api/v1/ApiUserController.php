@@ -25,9 +25,10 @@ class ApiUserController extends Controller
     public function store(Request $request)
     {
         $user = new User();
-        $user->uuid = Str::uuid()->toString();
-        $user->save();
 
+        $user->uuid = Str::uuid()->toString();
+
+        $user->save();
         return $user;
     }
 
@@ -55,8 +56,8 @@ class ApiUserController extends Controller
     public function destroy(string $id)
     {
         $user = User::findOrFail($id);
-        $user->delete();
 
+        $user->delete();
         return response()->noContent();
     }
 }
