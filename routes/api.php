@@ -6,6 +6,8 @@ use App\Http\Controllers\Api\v1\ApiChildhoodGenreController;
 use App\Http\Controllers\Api\v1\ApiComposerController;
 use App\Http\Controllers\Api\v1\ApiCurrentGenreController;
 use App\Http\Controllers\Api\v1\ApiEducationLevelController;
+use App\Http\Controllers\Api\v1\ApiKnownComposerController;
+use App\Http\Controllers\Api\v1\ApiKnownComposerTitleController;
 use App\Http\Controllers\Api\v1\ApiTitleController;
 use App\Http\Controllers\Api\v1\ApiUserController;
 use App\Models\ChildhoodGenre;
@@ -34,9 +36,16 @@ Route::get('v1/education-levels', function() {
 Route::post('v1/education-levels', [ApiEducationLevelController::class, 'store']);
 Route::delete('v1/education-levels', [ApiEducationLevelController::class, 'destroy']);
 
-
 // COMPOSERS
 Route::apiResource('v1/composers', ApiComposerController::class);
+
+// KNOWN COMPOSERS
+Route::post('v1/known-composers', [ApiKnownComposerController::class, 'store']);
+Route::delete('v1/known-composers', [ApiKnownComposerController::class, 'destroy']);
+
+// KNOWN COMPOSER TITLES
+Route::post('v1/known-composer-titles', [ApiKnownComposerTitleController::class, 'store']);
+Route::delete('v1/known-composer-titles', [ApiKnownComposerTitleController::class, 'destroy']);
 
 // TITLES
 Route::apiResource('v1/titles', ApiTitleController::class);
