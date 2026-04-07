@@ -3,8 +3,10 @@
 namespace App\Models;
 
 use App\Enums\Result;
+use Illuminate\Database\Eloquent\Attributes\Table;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
+#[Table('blind_test_results')]
 class BlindTestResult extends Pivot
 {
     /**

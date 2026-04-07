@@ -2,6 +2,7 @@
 
 use App\Enums\EducationLevel;
 use App\Enums\Genre;
+use App\Http\Controllers\Api\v1\ApiBlindTestResultController;
 use App\Http\Controllers\Api\v1\ApiChildhoodGenreController;
 use App\Http\Controllers\Api\v1\ApiComposerController;
 use App\Http\Controllers\Api\v1\ApiCurrentGenreController;
@@ -49,5 +50,9 @@ Route::delete('v1/known-composer-titles', [ApiKnownComposerTitleController::clas
 
 // TITLES
 Route::apiResource('v1/titles', ApiTitleController::class);
+
+// LISTENED TITLES / BLIND TEST RESULTS
+Route::post('v1/blind-test-results', [ApiBlindTestResultController::class, 'store']);
+Route::delete('v1/blind-test-results', [ApiBlindTestResultController::class, 'destroy']);
 
 // Route::apiResource('v1/childhood-genres', ChildhoodGenre::class)->only('store');
