@@ -5,7 +5,6 @@ namespace App\Enums;
 enum Genre: string
 {
     case BLUES = 'blues';
-    case BLUES = 'blues';
     case COUNTRY = 'country';
     case CLASSICAL = 'classical';
     case ELECTRO = 'electro';
