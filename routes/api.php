@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\v1\ApiCurrentGenreController;
 use App\Http\Controllers\Api\v1\ApiEducationLevelController;
 use App\Http\Controllers\Api\v1\ApiKnownComposerController;
 use App\Http\Controllers\Api\v1\ApiKnownComposerTitleController;
+use App\Http\Controllers\Api\v1\ApiStatsController;
 use App\Http\Controllers\Api\v1\ApiTitleController;
 use App\Http\Controllers\Api\v1\ApiUserController;
 use App\Models\ChildhoodGenre;
@@ -55,4 +56,7 @@ Route::apiResource('v1/titles', ApiTitleController::class);
 Route::post('v1/blind-test-results', [ApiBlindTestResultController::class, 'store']);
 Route::delete('v1/blind-test-results', [ApiBlindTestResultController::class, 'destroy']);
 
-// Route::apiResource('v1/childhood-genres', ChildhoodGenre::class)->only('store');
+// STATS
+Route::get('v1/titles/{id}/stats', [ApiStatsController::class, 'title_stats']);
+Route::get('v1/composer/{id}/stats', [ApiStatsController::class, 'composer_stats']);
+Route::get('v1/blind-test/stats', [ApiStatsController::class, 'blind_test_stats']);

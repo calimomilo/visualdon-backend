@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\v1;
 
 use App\Enums\Result;
 use App\Http\Controllers\Controller;
+use App\Models\BlindTestResult;
 use App\Models\Title;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class ApiBlindTestResultController extends Controller
         $result = $validated['result'];
         $user->listenedTitles()->attach($title->id, ['result' => $result]);
 
-        return $user->listenedTitles()->wherePivot('title_id', $title->id);
+        return BlindTestResult::where('user_id', $user->id)->where('title_id', $title->id)->firstOrFail();
     }
 
     /**
