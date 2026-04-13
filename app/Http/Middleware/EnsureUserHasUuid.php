@@ -21,14 +21,13 @@ class EnsureUserHasUuid
         
         if ($header_parts[0] === 'UUID') {
             $uuid = $header_parts[1];
-            $user = User::where('uuid', $uuid)->firstOrFail();
+            $user = User::where('uuid', $uuid)->first();
 
             if ($user) {
                 $request['user_uuid'] = $uuid;
+                return $next($request);
             }
-            return $next($request);
-        } else {
-            abort(401);
         }
+        abort(401);
     }
 }
