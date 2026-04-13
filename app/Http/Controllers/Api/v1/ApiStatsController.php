@@ -116,7 +116,7 @@ class ApiStatsController extends Controller
     /**
      * Return the stats of the blind test.
      */
-    public function blind_test_stats()
+    public function blindtest_stats()
     {
         $bt_stats = [];
 

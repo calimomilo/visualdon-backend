@@ -60,4 +60,14 @@ class ApiUserController extends Controller
         $user->delete();
         return response()->noContent();
     }
+
+    /**
+     * Display the current users info
+     */
+    public function self(Request $request)
+    {
+        $user = User::where('uuid', $request['user_uuid'])->with('childhoodGenres')->with('currentGenres')->with('educationLevels')->with('knownComposers')->with('knownComposerTitles')->with('listenedTitles')->firstOrFail();
+
+        return $user;
+    }
 }
