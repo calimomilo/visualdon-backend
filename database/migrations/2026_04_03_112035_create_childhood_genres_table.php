@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('childhood_genres', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->enum('genre', ['blues', 'country', 'classical', 'electro', 'hip-hop', 'jazz', 'metal', 'pop', 'rap', 'reggae', 'r&b', 'rock']);
+            $table->enum('genre', ['blues', 'country', 'classical', 'drum&bass', 'edm', 'hip-hop', 'jazz', 'metal', 'pop', 'rap', 'reggae', 'r&b', 'rock', 'techno', 'world']);
             $table->timestamps();
         });
     }

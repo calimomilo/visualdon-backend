@@ -16,7 +16,7 @@ class CheckAdminAccess
     public function handle(Request $request, Closure $next): Response
     {
         $header = $request->header('Authorization');
-        $expected_header = "Admin Token " . env('ADMIN_PASSWORD');
+        $expected_header = "Admin Token " . env('ADMIN_TOKEN');
 
         if ($header === $expected_header) {
             return $next($request);

@@ -2,6 +2,7 @@
 
 use App\Enums\EducationLevel;
 use App\Enums\Genre;
+use App\Enums\Period;
 use App\Http\Controllers\Api\v1\ApiBlindTestResultController;
 use App\Http\Controllers\Api\v1\ApiChildhoodGenreController;
 use App\Http\Controllers\Api\v1\ApiComposerController;
@@ -67,6 +68,11 @@ Route::apiResource('v1/titles', ApiTitleController::class)
 // LISTENED TITLES / BLIND TEST RESULTS
 Route::post('v1/blindtest-results', [ApiBlindTestResultController::class, 'store'])->middleware('uuid');
 Route::delete('v1/blindtest-results', [ApiBlindTestResultController::class, 'destroy'])->middleware('admin');
+
+// PERIODS
+Route::get('v1/periods', function() {
+    return Period::cases();
+});
 
 // STATS
 Route::get('v1/titles/{id}/stats', [ApiStatsController::class, 'title_stats']);

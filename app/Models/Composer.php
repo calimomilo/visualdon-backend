@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Enums\Epoch;
+use App\Enums\Period;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -15,7 +15,7 @@ class Composer extends Model
     protected function casts(): array
     {
         return [
-            'epoch' => Epoch::class,
+            'period' => Period::class,
         ];
     }
     

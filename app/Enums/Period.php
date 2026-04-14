@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum Epoch: string
+enum Period: string
 {
     case MEDIEVAL = 'medieval';
     case RENAISSANCE = 'renaissance';
@@ -13,5 +13,5 @@ enum Epoch: string
     case LATEROM = 'late_romantic';
     case TWENTIETH = '20th_century';
     case POSTWAR = 'post-war';
-    case TWENTIFIRST = '21st_century';
+    case TWENTYFIRST = '21st_century';
 }

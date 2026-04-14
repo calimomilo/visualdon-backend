@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api\v1;
 
-use App\Enums\Epoch;
+use App\Enums\Period;
 use App\Http\Controllers\Controller;
 use App\Models\Composer;
 use Illuminate\Http\Request;
@@ -27,14 +27,14 @@ class ApiComposerController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string',
-            'epoch' => ['required', Rule::enum(Epoch::class)],
+            'period' => ['required', Rule::enum(Period::class)],
             'portrait_url' => 'nullable|url'
         ]);
 
         $composer = new Composer();
 
         $composer->name = $validated['name'];
-        $composer->epoch = $validated['epoch'];
+        $composer->period = $validated['period'];
         $composer->portrait_url = $validated['portrait_url'];
 
         $composer->save();
@@ -58,14 +58,14 @@ class ApiComposerController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string',
-            'epoch' => ['required', Rule::enum(Epoch::class)],
+            'period' => ['required', Rule::enum(Period::class)],
             'portrait_url' => 'nullable|url'
         ]);
 
         $composer = Composer::findOrFail($id);
 
         $composer->name = $validated['name'];
-        $composer->epoch = $validated['epoch'];
+        $composer->period = $validated['period'];
         $composer->portrait_url = $validated['portrait_url'];
 
         $composer->save();

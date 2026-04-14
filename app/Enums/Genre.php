@@ -7,7 +7,8 @@ enum Genre: string
     case BLUES = 'blues';
     case COUNTRY = 'country';
     case CLASSICAL = 'classical';
-    case ELECTRO = 'electro';
+    case DRUMNBASS = 'drum&bass';
+    case EDM = 'edm';
     case HIPHOP = 'hip-hop';
     case JAZZ = 'jazz';
     case METAL = 'metal';
@@ -16,4 +17,6 @@ enum Genre: string
     case REGGAE = 'reggae';
     case RNB = 'r&b';
     case ROCK = 'rock';
+    case TECHNO = 'techno';
+    case WORLD = 'world';
 }

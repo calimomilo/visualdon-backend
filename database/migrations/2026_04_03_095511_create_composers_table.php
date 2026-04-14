@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('composers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->enum('epoch', ['medieval', 'renaissance', 'baroque', 'classical', 'early_romantic', 'romantic', 'late_romantic', '20th_century', 'post-war', '21st_century']);
+            $table->enum('period', ['medieval', 'renaissance', 'baroque', 'classical', 'early_romantic', 'romantic', 'late_romantic', '20th_century', 'post-war', '21st_century']);
             $table->string('portrait_url')->nullable();
             $table->timestamps();
         });
