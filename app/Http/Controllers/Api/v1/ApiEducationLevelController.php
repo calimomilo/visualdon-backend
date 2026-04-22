@@ -17,11 +17,11 @@ class ApiEducationLevelController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'levels.*' => [Rule::enum(EducationLevelEnum::class)]
+            'education-levels.*' => [Rule::enum(EducationLevelEnum::class)]
         ]);
 
         $user = User::where('uuid', $request['user_uuid'])->firstOrFail();
-        $education_levels = $validated['levels'];
+        $education_levels = $validated['education-levels'];
 
         foreach($education_levels as $level) {
             $education_level = new EducationLevel();
