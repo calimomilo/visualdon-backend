@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('education_levels', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->enum('level', ['autodidact', 'conservatory', 'hem']);
+            $table->enum('level', ['self-taught', 'conservatory', 'hem']);
             $table->timestamps();
         });
     }
