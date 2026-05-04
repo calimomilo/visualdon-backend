@@ -362,7 +362,7 @@ class TitlesTableSeeder extends Seeder
             array (
                 'id' => '182',
                 'composer_id' => '18',
-                'name' => 'Le Songe d’une nuit d’été “Mendelssohn”, ouverture',
+                'name' => 'Le Songe d’une nuit d’été, ouverture',
                 'release_year' => '1826',
                 'spotify_uri' => '6oSimvbINyW0XM1hYcEVaj',
                 'description' => 'Ein Sommernachtstraum (Le Songe d’une nuit d’été en français) est une ouverture (op. 21, MWV P 3) et une musique de scène (op. 61, MWV M 13) de Felix Mendelssohn. Figurant parmi ses œuvres les plus célèbres, elles sont composées pour la comédie de William Shakespeare, A Midsummer Night’s Dream.',
