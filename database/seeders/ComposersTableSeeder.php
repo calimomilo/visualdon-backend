@@ -270,7 +270,7 @@ class ComposersTableSeeder extends Seeder
                 'id' => 36,
                 'name' => 'Antonio Vivaldi',
                 'period' => 'baroque',
-                'portrait_url' => 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Verdi-photo-Brogi.jpg?uselang=fr',
+                'portrait_url' => 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Vivaldi.jpg',
             ),
         36 => 
             array (
