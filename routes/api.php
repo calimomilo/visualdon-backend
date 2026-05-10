@@ -75,6 +75,7 @@ Route::get('v1/periods', function() {
 });
 
 // STATS
+Route::get('v1/titles/all/stats', [ApiStatsController::class, 'titles_stats']);
 Route::get('v1/titles/{id}/stats', [ApiStatsController::class, 'title_stats']);
 Route::get('v1/composer/{id}/stats', [ApiStatsController::class, 'composer_stats']);
 Route::get('v1/blindtest/stats', [ApiStatsController::class, 'blindtest_stats']);

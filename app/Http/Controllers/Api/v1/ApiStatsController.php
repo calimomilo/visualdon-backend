@@ -19,6 +19,29 @@ class ApiStatsController extends Controller
     /**
      * Return the stats of the title.
      */
+    public function titles_stats()
+    {
+        $titles = Title::with('composer')->get();
+        $titles_stats = [];
+        
+        foreach($titles as $title) {
+            $title_stats = [
+                'title' => $title,
+            ];
+
+            foreach(Result::cases() as $result) {
+                $count = BlindTestResult::where('title_id', $title->id)->where('result', $result)->count();
+                $title_stats[$result->value] = $count;
+            }
+            $titles_stats[] = $title_stats;
+        }
+
+        return $titles_stats;
+    }
+
+    /**
+     * Return the stats of the title.
+     */
     public function title_stats(string $id)
     {
         $title = Title::with('composer')->findOrFail($id);
